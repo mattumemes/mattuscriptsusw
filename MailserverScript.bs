@@ -1,0 +1,32 @@
+#!/bin/bash
+# Dieser Script wurde von mir (Matthias Kistler) für seine Abschlussarbeit erstellt.
+echo Hallo $USER! Dieser Script hilft beim Installieren eines eingenen Mailservers, falls du das nicht willst drücke bitte ctrl + c um den Script zu beenden. 
+echo Führe nun die Anweisungen aus!
+read -p "Wie lautet der Name deiner Domain? " domainname
+echo $domainname
+apt upgrade
+apt update
+apt list --installed
+apt install nano
+apt install git
+apt install certbot
+apt install python3
+apt install python3-certbot-nginx
+apt-get install amavisd-new
+apt-get install spamassassin
+apt-get install clamav
+apt-get install clamav-daemon
+apt-get install unzip
+apt-get install bzip2
+apt-get install libnet-ph-perl
+apt-get install libnet-snpp-perl
+apt-get install libnet-telnet-perl
+apt-get install nomarch
+apt-get install lzop
+git clone https://github.com/modoboa/modoboa-installer
+apt-get install python3-virtualenv  
+apt-get install python3-pip
+apt-get install libdbd-pg-perl
+cd modoboa-installer
+touch $domainname
+./run.py --stop-after-configfile-check $domainname
